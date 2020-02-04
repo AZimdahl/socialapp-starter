@@ -2,10 +2,13 @@ import React from "react";
 import Spinner from "react-spinkit";
 import { withAsyncAction } from "../../HOCs";
 import "./LoginForm.css";
+
 import InputBase from '@material-ui/core/InputBase'
 import { fade, withStyles } from '@material-ui/core/styles';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import BubbleChartIcon from '@material-ui/icons/BubbleChart';
+import Button from "@material-ui/core/Button";
+
 
 const styles = theme => ({
   
@@ -81,6 +84,7 @@ class LoginForm extends React.Component {
           <div className={classes.userIcon}>
             <AccountCircleIcon />
             </div>
+            
             <InputBase
               placeholder="username"
               name="username"
@@ -111,9 +115,18 @@ class LoginForm extends React.Component {
             />
             </div>
           
-          &nbsp;&nbsp;&nbsp;<button type="submit" disabled={loading}>
+          &nbsp;&nbsp;&nbsp;
+          <Button
+            size="small"
+            className="postButton"
+            type="submit"
+            variant="contained"
+            type="submit"
+            disabled={loading}
+          >
             Login
-          </button>
+          </Button>
+
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
