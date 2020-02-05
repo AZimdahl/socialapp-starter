@@ -17,7 +17,12 @@ class Profile extends React.Component {
       messageData: []
     };
   }
-   
+  /*
+
+  PGM: Be careful hard coding the limit into the below method. Once the message list gets larger than 25 messages, 
+  you will not be getting a full message list.
+
+  */
   
   getMessageList = () => {
       return this.client.getMessagesList(25).then(result => {

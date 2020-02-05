@@ -1,3 +1,18 @@
+/*
+
+
+ECS:
+
+Overall this component seem overly complex especially around state and how the profile image is being
+stored to send over to the API. The mulitple references to the picture in state and the code logic 
+around maintining that make this code hard to follow.
+
+I would also spend some time understaind promises or the alternate syntax of async/await
+
+
+*/
+
+
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { withAsyncAction } from "../../HOCs";
@@ -56,6 +71,16 @@ class UserInfo extends React.Component {
       }
     };
   }
+
+  /*
+
+  ECS:
+  
+  Read up on promises for both methods below. getCurrentUserPicture feels overly complex with
+  chained .then() functions. It feels like handleDelete could use a .then() to only logout after the
+  deleteUser completes.
+  
+  */
 
   handleDelete = event => {
     this.client.deleteUser(this.props.username);

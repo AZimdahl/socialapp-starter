@@ -61,6 +61,14 @@ function Menu(props) {
   );
 }
 
+
+/*
+
+  PGM: I think i wrote the below export. It should be simplified to:
+  export default withAsyncAction("auth", "logout")(Menu)
+
+  */
+
 const connectedMenu = withAsyncAction("auth", "logout")(Menu)
 
 export default connectedMenu

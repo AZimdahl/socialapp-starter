@@ -11,7 +11,8 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import "./Home.css"
 
-
+//ECS: since this is not utilizing state or lifecycle hooks, 
+//it does not need to be a class component
 class Home extends React.Component {
   render() {
     return (
@@ -46,6 +47,15 @@ class Home extends React.Component {
         <ListItemText primary="Share what's new on your timeline"/>
       </ListItem>
       </div>
+      
+      {/* ECS: 
+      
+        This type of commented out code/feature that
+        wont be used or is part of an uninished feature
+        should not make it to the master branch. 
+      
+      */}
+
         {/* <div className="description">
           <br />
           <ul>
