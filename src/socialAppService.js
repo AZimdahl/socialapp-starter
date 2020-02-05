@@ -1,3 +1,14 @@
+/*
+
+ECS: lots of repeated code in this file around the headers being attached for auth.
+try an find a way to write this once and reuse it. 
+
+PGM: I like how you clearly broke the methods into sections using comments.
+The getMessagesList method takes in a username argument that it does not use, it should be removed.
+
+*/
+
+
 //import the axios HTTP client to communicate with the API
 import axios from "axios";
 

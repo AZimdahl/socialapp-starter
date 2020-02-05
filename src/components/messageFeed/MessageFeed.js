@@ -31,6 +31,12 @@ class MessageFeed extends Component {
     let messages = this.props.messages.map(message => {
       return (
         <React.Fragment key={message.id}>
+          {/* 
+          
+          ECS: Consider just passing the entire message object and not passing so many individual values
+          from the same object
+          
+          */}
           <Message
             username={message.username}
             text={message.text}

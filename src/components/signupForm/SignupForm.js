@@ -47,11 +47,37 @@ class SignupForm extends Component {
 
     render() {
         const { classes } = this.props;
+
+        /*ECS:
+
+        The onChange attached to the <form> tag should be on each individual <TextField> leaving only
+        the onSubmit on the <form> tag itself
+
+        */
         return (
+
             <form className={classes.root + " signup"} noValidate autoComplete="off" onChange={this.handleChange} onSubmit={this.handleSubmit}>
                 <div className="h1Element">
                     <h1>Sign up</h1>
                     </div>
+                    {/* ECS:
+                    
+                        Each textfield controlled by state (controlled components) should have it's
+                        value bound to the associated value in state
+
+                        Example
+                        value={this.state.data.formData.username}
+
+                        See comment above about moving the onchange from the <form> tag to the fields
+                        themselves.
+
+                        PGM: Also, there is an error in the console coming from the first Textfield component.
+                        It is expecting a boolean for the fullWidth property instead of a string.
+
+                        There's also a warning in the console because you have set the id's for all the Textfield
+                        components to "standard-required" whereas element id's should be unique.
+                    
+                    */}
                 <TextField
                     required
                     id="standard-required"
